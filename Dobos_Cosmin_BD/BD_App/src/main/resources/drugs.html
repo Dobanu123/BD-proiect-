@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>BD Project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+          integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+            integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+            crossorigin="anonymous"></script>
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        div {
+            webkit-user-select: none; /* Safari 3.1+ */
+            moz-user-select: none; /* Firefox 2+ */
+            ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+        }
+
+        body {
+            background: rgb(245, 234, 203);
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            background-color: #111111;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        a:hover {
+            color: white;
+            background-color: #208009;
+        }
+
+        .selected {
+            background: #041676;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="bg-dark">
+    <!-- Links -->
+    <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/addresses"><i class="fas fa-address-card"></i> Addresses</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/bills"><i class="fas fa-money-bill"></i> Bills</a>
+        </li>
+        <li class="nav-item selected">
+            <a class="nav-link p-2" href="/drugs"><i class="fas fa-tablets"></i> Drugs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/local-drugs"><i class="fas fa-pills"></i> Local Drugs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/orders"><i class="fas fa-shopping-cart"></i> Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link p-2" href="/pharmacies"><i class="fas fa-prescription-bottle-alt"></i> Pharmacies</a>
+        </li>
+        <li class="nav-item selected">
+            <a class="nav-link p-2" href="/producers"><i class="fas fa-industry"></i> Producers</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container text-center justify-content-center">
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-sm-12 col-xs-12 text-center'>
+                <br />
+                <table style="width:100%;" class="table table-bordered mb-4">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Drug Id</th>
+                        <th>Drug Name</th>
+                        <th>Description</th>
+                        <th>Producer Name</th>
+                        <th>Street</th>
+                        <th>Street Number</th>
+                        <th>City</th>
+                        <th>Country</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    #foreach ($drug in $drugs)
+                    <tr style="background: azure">
+                        <td>$drug['drug_id']</td>
+                        <td>$drug['drug_name']</td>
+                        <td>$drug['description']</td>
+                        <td>$drug['producer_name']</td>
+                        <td>$drug['street_address']</td>
+                        <td>$drug['street_number']</td>
+                        <td>$drug['city']</td>
+                        <td>$drug['country']</td>
+                    </tr>
+                    #end
+                    </tbody>
+                </table>
+                <p><br /></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer font-small fixed-bottom text-white-50 bg-dark">
+    <div class="footer-copyright text-center py-3" style="color: white">© 2020 Copyright: Dobos Cosmin
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

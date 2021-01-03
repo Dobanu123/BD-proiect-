@@ -1,0 +1,3 @@
+alter session set "_ORACLE_SCRIPT"=true;
+CREATE USER dobos IDENTIFIED BY dobos DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp QUOTA UNLIMITED ON users;
+GRANT connect , resource , create view TO dobos;
